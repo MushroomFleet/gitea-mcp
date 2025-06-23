@@ -1,0 +1,68 @@
+{
+  "name": "gitea-mcp",
+  "version": "1.0.0",
+  "description": "Production-ready MCP server for Gitea integration",
+  "type": "module",
+  "bin": {
+    "gitea-mcp": "./build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "docs/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node build/index.js",
+    "start:mcp": "cross-env NODE_ENV=development LOG_LEVEL=debug node build/index.js",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:integration": "vitest --config vitest.integration.config.ts",
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "type-check": "tsc --noEmit",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "prepare": "npm run build",
+    "health-check": "./scripts/health-check.sh"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.6.0",
+    "cross-fetch": "^4.0.0",
+    "gitea-js": "^1.23.0",
+    "ignore": "^7.0.5",
+    "mime-types": "^2.1.35",
+    "pino": "^8.19.0",
+    "rate-limiter-flexible": "^3.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-v8": "^1.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.0.3",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.2.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "gitea",
+    "git",
+    "repository",
+    "api",
+    "integration"
+  ],
+  "author": "Gitea MCP Team",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+we can begin planning the design of the GITEA MCP which will perform function related to the creation, management and administering of new and existing repositories which are hosted on a user controlled Gitea platform (self hosted)
+
+The platform would be fully setup and working, we can design the MCP to provide tools which assist with:
+
+creating new repos
+
+uploading files and folders while preserving the structure to existing repos
+
+this mcp will be named "Gitea-MCP" we can use deep research to target the most optimal logic to build out the first fully production ready version.
+
+write up the plan to a document named "TYPESCRIPT-DEVTEAM-HANDOFF.md" include all the details needed to complete the MCP development including required code snippets, project file structures with filenames, and full instructions. 
